@@ -18,6 +18,9 @@ int main()
 		else
 			ans.push_back(arr[j--]);
 	}*/
+
+	/* SECOND APPROACH
+	
 	vector<int> pos,neg;
 	for(int i=0;i<arr.size();i++)
 	{
@@ -43,8 +46,19 @@ int main()
 			else
 				ans.push_back(pos[p1++]);
 		}
+	}*/
+	
+	// 3RD APPROACH
+
+	while(j>=i)
+	{
+		while(arr[j]>0)
+			j--;
+		while(arr[i]<0)
+			i++;
+		swap(arr[i],arr[j]);
 	}
-	for(int i=0;i<ans.size();i++)
-		cout<<ans[i]<<" ";
+	for(int i=0;i<arr.size();i++)
+		cout<<arr[i]<<" ";
 	return 0;
 }
